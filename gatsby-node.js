@@ -1,7 +1,41 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const _ = require(`lodash`)
+const Promise = require(`bluebird`)
+const path = require(`path`)
+const slash = require(`slash`)
 
- // You can delete this file if you're not using it
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    graphql(
+      `
+        {
+          allContentfulHotel(limit: 1000) {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
+        }
+      `
+    )
+    .then(result => {
+      if (result.errors) {
+        reject(result.errors)
+      }
+      const hotelTemplate = path.resolve(`./src/templates/hotel.js`)
+      _.each(result.data.allContentfulHotel.edges, edge => {
+        createPage({
+          path: `/hotel/${edge.node.slug}/`,
+          component: slash(hotelTemplate),
+          context: {
+            id: edge.node.id,
+            slug: edge.node.slug
+          },
+        })
+      })
+      resolve()
+    })
+  })
+}
