@@ -8,9 +8,8 @@ const Header = () => (
               <div>Logotype</div>
           </Link>
           <nav role="navigation" className="w-nav-menu">
-              <Link to="#" className="nav-link w-nav-link">Home</Link>
-              <Link to="#" className="nav-link w-nav-link">About</Link>
-              <Link to="#" className="nav-link w-nav-link">Contact</Link>
+              <Link to="/login" className="nav-link w-nav-link">Login</Link>
+              <Link to="/registration" className="nav-link w-nav-link">Registration</Link>
           </nav>
           <div className="w-nav-button">
               <div className="w-icon-nav-menu"></div>

@@ -31,7 +31,8 @@ const Footer = () => (
           <div className="diviider"></div>
           <div className="copyrights">
               <h5>
-                  Created by <Link to="http://eric-design.ru">eric-design.ru</Link>
+                  {/* Created by <Link to="http://eric-design.ru">eric-design.ru</Link> */}
+                  Created by <Link to="http://ostrumtech.com">Ostrumtech</Link>
               </h5>
           </div>
       </div>
