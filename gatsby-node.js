@@ -27,7 +27,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       const hotelTemplate = path.resolve(`./src/templates/hotel.js`)
       _.each(result.data.allContentfulHotel.edges, edge => {
         createPage({
-          path: `/hotel/${edge.node.slug}/`,
+          path: `/hotels/${edge.node.slug}/`,
           component: slash(hotelTemplate),
           context: {
             id: edge.node.id,

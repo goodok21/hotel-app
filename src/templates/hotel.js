@@ -10,14 +10,16 @@ class HotelTemplate extends Component {
       title,
       description: {description},
       slug,
-      image: {file: {url}},
       content: {content},
     } = hotel
-    console.log(url);
+    const url = hotel.image && hotel.image.file.url
     return (
       <div className="transition-item">
-        <div className="section hotel-page" style={{ backgroundImage: `url(${url})` }}>
+        <div className="section hotel-page" style={{ backgroundImage: `url(${url || ''})` }}>
           <div className="w-container">
+            <div className="box mini">
+              <Link to="/hotels/">Go back</Link>
+            </div>
             <div className="box form">
               <h1>{title}</h1>
               <p>{description}</p>

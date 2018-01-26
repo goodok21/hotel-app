@@ -2075,6 +2075,12 @@ a {
     max-width: 450px;
 }
 
+.box.mini {
+  padding: 10px 24px;
+  margin: 20px 0px;
+  display: inline-block;
+}
+
 .text-field {
     border-radius: 2px;
 }
@@ -2091,7 +2097,8 @@ a {
     left: 0px;
     top: 0px;
     right: 0px;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(72,72,72,0.6);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1)
 }
 
 .nav-link {
@@ -2156,6 +2163,7 @@ a {
 }
 
 .hotel-mini {
+    width: 30%;
     margin: 10px;
     padding-top: 5px;
     padding-bottom: 5px;

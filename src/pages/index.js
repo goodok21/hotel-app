@@ -61,7 +61,7 @@ class IndexPage extends Component {
                   </div>
 
                   <div className="box-top-padding-20">
-                    <Link to="results" value="Search" className="submit-button w-button">Search</Link>
+                    <Link to="/hotels/" value="Search" className="submit-button w-button">Search</Link>
                   </div>
                 </form>
                 <div className="w-form-done">
