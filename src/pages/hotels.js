@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 const Hotel = (props) => (
   <div className="hotel-mini">
-    <Link to={`/hotel/${props.slug}`} style={{ color: '#484848'}}>
+    <Link to={`/hotels/${props.slug}`} style={{ color: '#484848'}}>
       <div className="hotel-image" style={{
         backgroundImage: props.img
       }}></div>
