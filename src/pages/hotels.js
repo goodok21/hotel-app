@@ -5,7 +5,7 @@ const Hotel = (props) => (
   <div className="hotel-mini">
     <Link to={`/hotels/${props.slug}`} style={{ color: '#484848'}}>
       <div className="hotel-image" style={{
-        backgroundImage: props.img
+        backgroundImage: props.img ? img.file.url 'none'
       }}></div>
       <h4>{props.title}</h4>
       <div>{props.description}</div>
@@ -25,7 +25,7 @@ class ResultsPage extends Component {
               { hotels.map( item => {
                 return <Hotel
                   slug={item.node.slug}
-                  img={item.node.image.file.url}
+                  img={item.node.image}
                   title={item.node.title}
                   description={item.node.description.description}
                   key={item.node.slug}
