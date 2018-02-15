@@ -25,7 +25,7 @@ class ResultsPage extends Component {
               { hotels.map( item => {
                 return <Hotel
                   slug={item.node.slug}
-                  img={item.node.image}
+                  img={item.node.image.file.url}
                   title={item.node.title}
                   description={item.node.description.description}
                   key={item.node.slug}
