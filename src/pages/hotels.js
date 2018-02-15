@@ -5,7 +5,7 @@ const Hotel = (props) => (
   <div className="hotel-mini">
     <Link to={`/hotels/${props.slug}`} style={{ color: '#484848'}}>
       <div className="hotel-image" style={{
-        backgroundImage: props.img ? img.file.url 'none'
+        backgroundImage: props.img ? `url(${props.img.file.url})` : 'none'
       }}></div>
       <h4>{props.title}</h4>
       <div>{props.description}</div>
@@ -16,6 +16,7 @@ const Hotel = (props) => (
 class ResultsPage extends Component {
   render() {
     var hotels = this.props.data.allContentfulHotel.edges;
+    console.log(hotels);
     return (
       <div className="transition-item ">
         <div className="section results">
